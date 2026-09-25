@@ -25,10 +25,9 @@ jobs:
 
 
     - name: Recreate application.properties
-      run:
-        mkdir -p src/main/rescources
-        echo "${{secrets.APP_PROPERTIES}}" > src/main/resources/application.properties
-
+      run: |
+        mkdir -p src/main/resources
+        echo "${{ secrets.APPLICATION_PROPERTIES }}" > src/main/resources/application.properties
 
 
 # Login to ECR
